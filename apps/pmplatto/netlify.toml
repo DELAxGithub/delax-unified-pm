@@ -11,9 +11,7 @@
   status = 200
 
 [context.production.environment]
-  # Production environment variables will be set in Netlify dashboard
   NODE_ENV = "production"
 
 [context.deploy-preview.environment]
-  # Deploy preview environment
   NODE_ENV = "development"
