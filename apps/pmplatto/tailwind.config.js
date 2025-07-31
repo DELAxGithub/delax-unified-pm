@@ -4,38 +4,38 @@ export default {
   theme: {
     extend: {
       colors: {
-        // PMPlatto Blue Theme (差別化)
-        primary: '#1E40AF',      // Deep Blue
-        secondary: '#EEF2FF',    // Light Blue Gray
-        accent: '#3B82F6',       // Bright Blue
+        // PMPlatto Green Theme (自然と成長をイメージ)
+        primary: '#10B981',      // Emerald 500
+        secondary: '#ECFDF5',    // Green 50
+        accent: '#34D399',       // Emerald 400
         text: {
           primary: '#1E293B',    // Slate Gray
           secondary: '#64748B'   // Lighter Slate
         },
-        // PMPlatto Episode Status Colors (Blue系統)
+        // PMPlatto Episode Status Colors (Green系統)
         episodeStatus: {
-          '台本作成中': '#94A3B8',    // Slate 400
-          '素材準備': '#7C3AED',      // Violet 600  
-          '素材確定': '#4F46E5',      // Indigo 600
-          '編集中': '#2563EB',        // Blue 600
-          '試写1': '#0891B2',         // Cyan 600
-          '修正1': '#059669',         // Emerald 600
-          'MA中': '#65A30D',          // Lime 600
-          '初稿完成': '#CA8A04',      // Yellow 600
-          '修正中': '#DC2626',        // Red 600
-          '完パケ納品': '#16A34A'     // Green 600
+          '台本作成中': '#94A3B8',    // Slate 400 (開始段階は灰色)
+          '素材準備': '#84CC16',      // Lime 500  
+          '素材確定': '#65A30D',      // Lime 600
+          '編集中': '#22C55E',        // Green 500
+          '試写1': '#16A34A',         // Green 600
+          '修正1': '#15803D',         // Green 700
+          'MA中': '#166534',          // Green 800
+          '初稿完成': '#059669',      // Emerald 600
+          '修正中': '#DC2626',        // Red 600 (修正は赤で注意喚起)
+          '完パケ納品': '#047857'     // Emerald 700 (完了は深い緑)
         },
-        // Original Program Status Colors (維持)
+        // Original Program Status Colors (Green系統に統一)
         status: {
-          'キャスティング中': '#DBEAFE',  // Blue 100
-          '日程調整中': '#BFDBFE',      // Blue 200
-          'ロケハン前': '#93C5FD',       // Blue 300
-          '収録準備中': '#60A5FA',      // Blue 400
-          '編集中': '#3B82F6',          // Blue 500
-          '試写中': '#2563EB',          // Blue 600
-          'MA中': '#1D4ED8',            // Blue 700
-          '完パケ納品': '#1E40AF',      // Blue 800
-          '放送済み': '#1E3A8A'         // Blue 900
+          'キャスティング中': '#DCFCE7',  // Green 100
+          '日程調整中': '#BBF7D0',      // Green 200
+          'ロケハン前': '#86EFAC',       // Green 300
+          '収録準備中': '#4ADE80',      // Green 400
+          '編集中': '#22C55E',          // Green 500
+          '試写中': '#16A34A',          // Green 600
+          'MA中': '#15803D',            // Green 700
+          '完パケ納品': '#166534',      // Green 800
+          '放送済み': '#14532D'         // Green 900
         }
       }
     }
