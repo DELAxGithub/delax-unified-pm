@@ -1,0 +1,90 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Type check
+      run: npm run type-check
+      
+    - name: Lint
+      run: npm run lint
+      
+    - name: Build all apps
+      run: npm run build
+      
+    - name: Run tests
+      run: npm run test
+      
+  build-pmlibrary:
+    runs-on: ubuntu-latest
+    needs: build-and-test
+    if: github.ref == 'refs/heads/main'
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Build PMLibrary
+      run: npm run build:pmlibrary
+      
+    - name: Deploy PMLibrary to Netlify
+      if: success()
+      run: |
+        echo "PMLibrary build completed successfully"
+        # Netlify deployment will be added later
+        
+  build-pmplatto:
+    runs-on: ubuntu-latest
+    needs: build-and-test
+    if: github.ref == 'refs/heads/main'
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Build PMPlatto
+      run: npm run build:pmplatto
+      
+    - name: Deploy PMPlatto to Netlify
+      if: success()
+      run: |
+        echo "PMPlatto build completed successfully"
+        # Netlify deployment will be added later

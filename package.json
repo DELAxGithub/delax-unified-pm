@@ -1,0 +1,45 @@
+{
+  "name": "delax-unified-pm",
+  "version": "1.0.0",
+  "private": true,
+  "description": "DELAx PM - 統合番組制作管理プラットフォーム",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "type-check": "turbo run type-check",
+    "clean": "turbo run clean",
+    "dev:pmlibrary": "turbo run dev --filter=pmlibrary",
+    "dev:pmplatto": "turbo run dev --filter=pmplatto",
+    "dev:shared": "turbo run dev --filter=shared-* --parallel",
+    "build:pmlibrary": "turbo run build --filter=pmlibrary",
+    "build:pmplatto": "turbo run build --filter=pmplatto",
+    "deploy:pmlibrary": "turbo run build --filter=pmlibrary && cd apps/pmlibrary && npm run deploy",
+    "deploy:pmplatto": "turbo run build --filter=pmplatto && cd apps/pmplatto && npm run deploy",
+    "env:status": "./scripts/dev-environment.sh status",
+    "env:dev:all": "./scripts/dev-environment.sh dev:all",
+    "env:diff:apps": "./scripts/dev-environment.sh diff:apps",
+    "env:diff:schemas": "./scripts/dev-environment.sh diff:schemas",
+    "env:supabase:start": "./scripts/dev-environment.sh supabase:start",
+    "env:supabase:stop": "./scripts/dev-environment.sh supabase:stop",
+    "env:clean": "./scripts/dev-environment.sh clean",
+    "migrate:pmplatto": "./scripts/migrate-pmplatto.sh",
+    "migrate:pmplatto:dry": "./scripts/migrate-pmplatto.sh dummy dry-run"
+  },
+  "devDependencies": {
+    "@turbo/gen": "^1.10.12",
+    "turbo": "^1.10.12",
+    "typescript": "^5.2.2",
+    "@types/node": "^20.8.0"
+  },
+  "packageManager": "npm@10.2.0",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}

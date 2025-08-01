@@ -1,0 +1,31 @@
+{
+  "name": "@delax/supabase-client",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "lint": "eslint src/**/*.ts",
+    "type-check": "tsc --noEmit",
+    "test": "echo 'Tests not implemented yet'",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.7",
+    "@delax/shared-types": "*"
+  },
+  "devDependencies": {
+    "typescript": "^5.2.2",
+    "eslint": "^9.9.1",
+    "@types/node": "^20.8.0"
+  }
+}
